@@ -1,0 +1,42 @@
+@keyframes moveLabel {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateX(20px);
+        /* Vai para a posição original */
+    }
+}
+
+@keyframes moveLabelBack {
+    from {
+      transform: translateX(20px); /* Começa na posição final da animação anterior */
+    }
+    to {
+      transform: translateY(0); /* Retorna à posição original */
+    }
+  }
+
+.input-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.input-container label {
+    width: fit-content;
+}
+
+.input-container input {
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.input-container input:focus+label {
+    animation: moveLabel 0.3s ease forwards;
+}
+
+.input-container input:not(:focus) + label {
+    background-color: transparent;
+    animation: moveLabelBack 0.3s ease forwards;
+  }

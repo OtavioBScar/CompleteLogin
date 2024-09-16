@@ -1,0 +1,115 @@
+.login-container{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(40, 39, 39);
+}
+
+.login-form-container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 60%;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    background-color: rgb(189, 191, 191);
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 80%;
+    height: 50%;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding-bottom: 24px;
+
+    font-size: 20px;
+}
+
+.confirm-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.confirm-button{
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.confirm-button:hover{
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.login-with-apis{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.lwa-text{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.lwa-buttons{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+}
+
+.lwa-buttons button{
+    margin: 0 10px;
+}
+
+.google-login{
+    
+}
+
+.github-login{
+
+}
+
+.cadastro-button{
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+}
+
+.cadastro-button:hover{
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.01);
+    cursor: pointer;
+
+    .cadastro-button-p{
+        color: rgb(0, 77, 125);
+    }
+}
+
+.cadastro-button-p{
+    color: rgb(0, 112, 182);
+}
