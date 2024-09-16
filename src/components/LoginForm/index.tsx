@@ -2,6 +2,7 @@ import { FC, useState } from "react"
 import "./style.css"
 import CadastroForm from "../CadastroForm";
 import Input from "../Input";
+import api from "../../services/api";
 
 interface usuario {
     email: string,
@@ -22,19 +23,21 @@ function LoginForm() {
         setUsuario((prev) => ({ ...prev, [name]: value }))
     }
 
-    const prevUser = { email: "otavio@mail.com", senha: "1234" }
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-
-        if (prevUser.email === usuario.email && prevUser.senha === usuario.senha) {
-            setUsuario({
-                email: '',
-                senha: ''
-            })
-            return alert("Logado")
-        }
-        return alert("Email ou senha incorreta")
+        api.get(`/users/${usuario.email}`).then((res) => {
+            const userPassword = res.data.user_password
+            if (usuario.senha === userPassword) {
+                setUsuario({
+                    email: '',
+                    senha: ''
+                })
+                return alert("Logado")
+            }
+            return alert("Email ou senha incorreta")
+        }).catch(() => {
+            return alert("Email ou senha incorreta")
+        })
     }
 
     if (!!showCadastro) return <CadastroForm show={showCadastro} setShow={() => setShowCadastro(!showCadastro)} />;

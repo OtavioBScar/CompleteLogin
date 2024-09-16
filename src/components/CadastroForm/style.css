@@ -1,0 +1,195 @@
+.cadastro-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(40, 39, 39);
+}
+
+.cadastro-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 60%;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    background-color: rgb(189, 191, 191);
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 80%;
+    height: 75%;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    padding-bottom: 24px;
+    gap: 0.2rem;
+    font-size: 20px;
+}
+
+.cadastro-form-genero {
+    display: flex;
+    height: 20%;
+}
+
+.cadastro-form-genero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cadastro-form-genero-radios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.confirm-div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.confirm-button {
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.confirm-button:hover {
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.cadastro-with-apis {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.lwa-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.lwa-buttons {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+}
+
+.lwa-buttons button {
+    margin: 0 10px;
+}
+
+.google-cadastro {}
+
+.github-cadastro {}
+
+.cadastro-form-genero-radios {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-start;
+}
+
+
+.radio {
+    opacity: 0;
+    position: absolute;
+}
+
+
+.radio + label {
+    margin-left: 16px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: start;
+    position: relative;
+    padding-left: 30px;
+    line-height: 0.2;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.radio + label::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #ccc; 
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+
+.radio:checked + label::before {
+    background-color: #ddd;
+    border: 1px solid #333;
+}
+
+
+#masculino:checked + label::before {
+    background-color: lightblue; 
+    border: 1px solid blue; 
+}
+
+#feminino:checked + label::before {
+    background-color: rgb(255, 126, 178);
+    border: 1px solid rgb(255, 0, 225); 
+}
+
+#none:checked + label::before {
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+
+.login-button {
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+}
+
+.login-button:hover {
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.01);
+    cursor: pointer;
+
+    .login-button-p {
+        color: rgb(0, 77, 125);
+    }
+}
+
+.login-button-p {
+    color: rgb(0, 112, 182);
+}

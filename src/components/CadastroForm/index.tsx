@@ -1,12 +1,13 @@
 import { FC } from "react"
 import "./style.css"
+import Input from "../Input";
 
-interface CadastroProps{
+interface CadastroProps {
     show: boolean,
     setShow: () => void
 }
 
-interface usuario{
+interface usuario {
     nome: string,
     email: string,
     senha: string,
@@ -16,26 +17,31 @@ interface usuario{
 function CadastroForm({ show, setShow }: CadastroProps) {
 
     if (!show) return null;
-    return(
+    return (
         <div className="cadastro-container">
             <div className="cadastro-form-container">
                 <form action="" className="cadastro-form">
-                    <label htmlFor="nome">Nome completo</label>
-                    <input type="text" id="nome" name="nome" className="cadastro-form-input" />
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email" name="email" className="cadastro-form-input" />
-                    <label htmlFor="senha">Senha</label>
-                    <input type="text" id="senha" name="senha" className="cadastro-form-input" />
-                    <label htmlFor="confirmarSenha">Confirmar senha</label>
-                    <input type="text" id="confirmar-senha" name="confirmarSenha" className="cadastro-form-input" />
-                        <h4>Genero</h4>
+                    <Input label="Nome Completo" type="text" name="nome" value="" required event={() => ""} />
+                    <Input label="Email" type="text" name="email" value="" required event={() => ""} />
+                    <Input label="Senha" type="password" name="senha" value="" required event={() => ""} />
+                    <Input label="Confirmar senha" type="password" name="senha" value="" required event={() => ""} />
                     <div className="cadastro-form-genero">
-                        <input type="radio" id="masculino" name="genero" value="masculino" className="radio" />
-                        <input type="radio" id="feminino" name="genero" value="feminino" className="radio" />
-                        <input type="radio" id="none" name="genero" value="nao-informar" className="radio" />
+                        <div className="cadastro-form-genero-text">
+                            <h4>Genero</h4>
+                        </div>
+                        <div className="cadastro-form-genero-radios">
+                            <input type="radio" id="masculino" name="genero" value="masculino" className="radio" />
+                            <label htmlFor="masculino">Masculino</label>
+
+                            <input type="radio" id="feminino" name="genero" value="feminino" className="radio" />
+                            <label htmlFor="feminino">Feminino</label>
+
+                            <input type="radio" id="none" name="genero" value="nao-informar" className="radio" />
+                            <label htmlFor="none">Não Informar</label>
+                        </div>
                     </div>
                 </form>
-                <button onClick={setShow}>Já possui uma conta? Faça cadastro</button>
+                <button className="login-button" onClick={setShow}><p className="login-button-p">Já possui uma conta? Entre</p></button>
             </div>
         </div>
     )
